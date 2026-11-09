@@ -1,0 +1,13 @@
+I am choosing a min-heap priority queue, since removing the min is o(logn) vs o(n) for list
+(if kept in ascending order). It's o(logn) for remove min since it follows min-heap remove
+protocol which removes the root and reorders itself for a tree that is log n tall. Adding
+occurs in O(logn) as compared to the lists add time of O(n), and building the tree costs
+o(nlogn) as compared to o(n^2) for the list. the heap takes O(n log n) for n adds (or O(n)
+using the constructor)Combining n leaves to a singular root takes n-1 combines, which shows
+that removeMin takes 2(n-1) calls, and addNode takes (n-1) calls with building a tree of n
+characters that makes priority queue faster since it only takes O(log n) to source a node
+compared to the lists O(n), so in total it takes the priority queue O(nlogn). Priority queue
+handles ties easily as not only is compareTo overriden for this purpose, but also there will
+never be true ties where both freq and ascii are the same. Since comesBefore already gives a
+strict order the priority queue sorts itself based on ties, adn the final huffman tree is tthe
+same no matter the internal queue order
